@@ -18,6 +18,12 @@
             margin: 0 auto;
             padding: 60px 24px 80px;
         }
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -25,9 +31,32 @@
             font-size: 14px;
             color: #34c759;
             text-decoration: none;
-            margin-bottom: 32px;
         }
         .back-link:hover { text-decoration: underline; }
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: #f5f5f7;
+            border-radius: 10px;
+            padding: 3px;
+        }
+        .lang-btn {
+            padding: 5px 12px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #86868b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: #fff;
+            color: #1d1d1f;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
         h1 {
             font-size: 32px;
             font-weight: 700;
@@ -46,18 +75,9 @@
             margin-bottom: 12px;
             letter-spacing: -0.3px;
         }
-        p {
-            margin-bottom: 16px;
-            color: #333;
-        }
-        ul {
-            margin-bottom: 16px;
-            padding-left: 24px;
-        }
-        li {
-            margin-bottom: 8px;
-            color: #333;
-        }
+        p { margin-bottom: 16px; color: #333; }
+        ul { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; color: #333; }
         a { color: #34c759; }
         .contact-box {
             margin-top: 40px;
@@ -66,79 +86,246 @@
             border-radius: 12px;
         }
         .contact-box p { margin-bottom: 4px; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
         @media (prefers-color-scheme: dark) {
             body { background: #000; color: #f5f5f7; }
             p, li { color: #d1d1d6; }
             .contact-box { background: #1c1c1e; }
+            .lang-switcher { background: #1c1c1e; }
+            .lang-btn { color: #98989d; }
+            .lang-btn.active { background: #2c2c2e; color: #f5f5f7; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="/" class="back-link">← FoodLens</a>
+        <div class="top-bar">
+            <a href="/" class="back-link">← FoodLens</a>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+                <button class="lang-btn" onclick="switchLang('pt')">PT</button>
+                <button class="lang-btn" onclick="switchLang('es')">ES</button>
+            </div>
+        </div>
 
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: February 15, 2026</p>
+        <!-- ═══ ENGLISH ═══ -->
+        <div id="lang-en" class="lang-content active">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last updated: February 15, 2026</p>
 
-        <p>GemTech Labs AI ("we", "us", or "our") operates the FoodLens mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use our App.</p>
+            <p>GemTech Labs AI ("we", "us", or "our") operates the FoodLens mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use our App.</p>
 
-        <h2>1. Information We Collect</h2>
-        <p><strong>Account Information:</strong> When you create an account, we collect your email address, display name, and authentication credentials. If you sign in with Apple or Google, we receive basic profile information from those services.</p>
-        <p><strong>Usage Data:</strong> We collect information about how you use the App, including products you scan, search queries, and feature interactions. This helps us improve the App experience.</p>
-        <p><strong>Camera Access:</strong> The App uses your device camera solely to scan product barcodes. We do not capture, store, or transmit photos or video. Camera data is processed locally on your device.</p>
-        <p><strong>Device Information:</strong> We may collect general device information such as device type, operating system version, and language preferences to optimize the App experience.</p>
+            <h2>1. Information We Collect</h2>
+            <p><strong>Account Information:</strong> When you create an account, we collect your email address, display name, and authentication credentials. If you sign in with Apple or Google, we receive basic profile information from those services.</p>
+            <p><strong>Usage Data:</strong> We collect information about how you use the App, including products you scan, search queries, and feature interactions. This helps us improve the App experience.</p>
+            <p><strong>Camera Access:</strong> The App uses your device camera solely to scan product barcodes. We do not capture, store, or transmit photos or video. Camera data is processed locally on your device.</p>
+            <p><strong>Device Information:</strong> We may collect general device information such as device type, operating system version, and language preferences to optimize the App experience.</p>
 
-        <h2>2. How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-            <li>Provide and maintain the App's core functionality, including product analysis and health scoring</li>
-            <li>Store your scan history and favorites for your convenience</li>
-            <li>Improve and optimize the App's performance and user experience</li>
-            <li>Manage your account and subscription</li>
-            <li>Communicate with you about updates, support, or changes to our services</li>
-        </ul>
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and maintain the App's core functionality, including product analysis and health scoring</li>
+                <li>Store your scan history and favorites for your convenience</li>
+                <li>Improve and optimize the App's performance and user experience</li>
+                <li>Manage your account and subscription</li>
+                <li>Communicate with you about updates, support, or changes to our services</li>
+            </ul>
 
-        <h2>3. Data Storage and Security</h2>
-        <p>Your data is stored securely using Google Firebase, which provides industry-standard encryption for data in transit and at rest. We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, or destruction.</p>
+            <h2>3. Data Storage and Security</h2>
+            <p>Your data is stored securely using Google Firebase, which provides industry-standard encryption for data in transit and at rest. We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, or destruction.</p>
 
-        <h2>4. Third-Party Services</h2>
-        <p>We use the following third-party services:</p>
-        <ul>
-            <li><strong>Firebase (Google):</strong> Authentication, data storage, and cloud functions</li>
-            <li><strong>Open Food Facts:</strong> Product database for nutritional information (open-source, community-driven)</li>
-            <li><strong>Anthropic:</strong> AI-powered product analysis for premium features</li>
-            <li><strong>RevenueCat:</strong> Subscription and payment management</li>
-        </ul>
-        <p>These services have their own privacy policies governing the use of your information.</p>
+            <h2>4. Third-Party Services</h2>
+            <p>We use the following third-party services:</p>
+            <ul>
+                <li><strong>Firebase (Google):</strong> Authentication, data storage, and cloud functions</li>
+                <li><strong>Open Food Facts:</strong> Product database for nutritional information (open-source, community-driven)</li>
+                <li><strong>Anthropic:</strong> AI-powered product analysis for premium features</li>
+                <li><strong>RevenueCat:</strong> Subscription and payment management</li>
+            </ul>
+            <p>These services have their own privacy policies governing the use of your information.</p>
 
-        <h2>5. Data Sharing</h2>
-        <p>We do not sell, trade, or rent your personal information to third parties. We may share anonymized, aggregated data for analytics purposes. We may disclose your information if required by law or to protect our legal rights.</p>
+            <h2>5. Data Sharing</h2>
+            <p>We do not sell, trade, or rent your personal information to third parties. We may share anonymized, aggregated data for analytics purposes. We may disclose your information if required by law or to protect our legal rights.</p>
 
-        <h2>6. Data Retention</h2>
-        <p>We retain your data for as long as your account is active. You can request deletion of your account and associated data at any time by contacting us. Upon account deletion, your personal data will be permanently removed within 30 days.</p>
+            <h2>6. Data Retention</h2>
+            <p>We retain your data for as long as your account is active. You can request deletion of your account and associated data at any time by contacting us. Upon account deletion, your personal data will be permanently removed within 30 days.</p>
 
-        <h2>7. Your Rights</h2>
-        <p>Depending on your location, you may have the right to:</p>
-        <ul>
-            <li>Access, correct, or delete your personal data</li>
-            <li>Object to or restrict the processing of your data</li>
-            <li>Data portability — receive your data in a structured format</li>
-            <li>Withdraw consent at any time</li>
-        </ul>
-        <p>To exercise any of these rights, please contact us at the email below.</p>
+            <h2>7. Your Rights</h2>
+            <p>Depending on your location, you may have the right to:</p>
+            <ul>
+                <li>Access, correct, or delete your personal data</li>
+                <li>Object to or restrict the processing of your data</li>
+                <li>Data portability — receive your data in a structured format</li>
+                <li>Withdraw consent at any time</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us at the email below.</p>
 
-        <h2>8. Children's Privacy</h2>
-        <p>The App is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+            <h2>8. Children's Privacy</h2>
+            <p>The App is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
 
-        <h2>9. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the App or via email. Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the App or via email. Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>10. Contact Us</h2>
-        <div class="contact-box">
-            <p><strong>GemTech Labs AI</strong></p>
-            <p>Email: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
-            <p>Website: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            <h2>10. Contact Us</h2>
+            <div class="contact-box">
+                <p><strong>GemTech Labs AI</strong></p>
+                <p>Email: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
+                <p>Website: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            </div>
+        </div>
+
+        <!-- ═══ PORTUGUÊS ═══ -->
+        <div id="lang-pt" class="lang-content">
+            <h1>Política de Privacidade</h1>
+            <p class="last-updated">Última atualização: 15 de fevereiro de 2026</p>
+
+            <p>A GemTech Labs AI ("nós" ou "nosso") opera o aplicativo móvel FoodLens (o "App"). Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações quando você usa nosso App.</p>
+
+            <h2>1. Informações que Coletamos</h2>
+            <p><strong>Informações da Conta:</strong> Ao criar uma conta, coletamos seu endereço de e-mail, nome de exibição e credenciais de autenticação. Se você entrar com Apple ou Google, recebemos informações básicas de perfil desses serviços.</p>
+            <p><strong>Dados de Uso:</strong> Coletamos informações sobre como você usa o App, incluindo produtos que você escaneia, consultas de pesquisa e interações com recursos. Isso nos ajuda a melhorar a experiência do App.</p>
+            <p><strong>Acesso à Câmera:</strong> O App usa a câmera do seu dispositivo exclusivamente para escanear códigos de barras de produtos. Não capturamos, armazenamos ou transmitimos fotos ou vídeos. Os dados da câmera são processados localmente no seu dispositivo.</p>
+            <p><strong>Informações do Dispositivo:</strong> Podemos coletar informações gerais do dispositivo, como tipo de dispositivo, versão do sistema operacional e preferências de idioma para otimizar a experiência do App.</p>
+
+            <h2>2. Como Usamos Suas Informações</h2>
+            <p>Usamos as informações coletadas para:</p>
+            <ul>
+                <li>Fornecer e manter a funcionalidade principal do App, incluindo análise de produtos e pontuação de saúde</li>
+                <li>Armazenar seu histórico de escaneamento e favoritos para sua conveniência</li>
+                <li>Melhorar e otimizar o desempenho e a experiência do usuário do App</li>
+                <li>Gerenciar sua conta e assinatura</li>
+                <li>Comunicar-nos com você sobre atualizações, suporte ou alterações em nossos serviços</li>
+            </ul>
+
+            <h2>3. Armazenamento e Segurança de Dados</h2>
+            <p>Seus dados são armazenados com segurança usando o Google Firebase, que fornece criptografia padrão da indústria para dados em trânsito e em repouso. Implementamos medidas técnicas e organizacionais apropriadas para proteger suas informações pessoais contra acesso não autorizado, alteração ou destruição.</p>
+
+            <h2>4. Serviços de Terceiros</h2>
+            <p>Utilizamos os seguintes serviços de terceiros:</p>
+            <ul>
+                <li><strong>Firebase (Google):</strong> Autenticação, armazenamento de dados e funções em nuvem</li>
+                <li><strong>Open Food Facts:</strong> Banco de dados de produtos para informações nutricionais (código aberto, mantido pela comunidade)</li>
+                <li><strong>Anthropic:</strong> Análise de produtos com IA para recursos premium</li>
+                <li><strong>RevenueCat:</strong> Gerenciamento de assinaturas e pagamentos</li>
+            </ul>
+            <p>Esses serviços possuem suas próprias políticas de privacidade que regem o uso de suas informações.</p>
+
+            <h2>5. Compartilhamento de Dados</h2>
+            <p>Não vendemos, trocamos ou alugamos suas informações pessoais a terceiros. Podemos compartilhar dados anônimos e agregados para fins analíticos. Podemos divulgar suas informações se exigido por lei ou para proteger nossos direitos legais.</p>
+
+            <h2>6. Retenção de Dados</h2>
+            <p>Retemos seus dados enquanto sua conta estiver ativa. Você pode solicitar a exclusão de sua conta e dados associados a qualquer momento entrando em contato conosco. Após a exclusão da conta, seus dados pessoais serão permanentemente removidos em até 30 dias.</p>
+
+            <h2>7. Seus Direitos</h2>
+            <p>Dependendo da sua localização, você pode ter o direito de:</p>
+            <ul>
+                <li>Acessar, corrigir ou excluir seus dados pessoais</li>
+                <li>Opor-se ou restringir o processamento de seus dados</li>
+                <li>Portabilidade de dados — receber seus dados em formato estruturado</li>
+                <li>Retirar o consentimento a qualquer momento</li>
+            </ul>
+            <p>Para exercer qualquer um desses direitos, entre em contato conosco pelo e-mail abaixo.</p>
+
+            <h2>8. Privacidade de Crianças</h2>
+            <p>O App não se destina a crianças menores de 13 anos. Não coletamos intencionalmente informações pessoais de crianças. Se você acredita que uma criança nos forneceu informações pessoais, entre em contato conosco para que possamos excluí-las.</p>
+
+            <h2>9. Alterações nesta Política</h2>
+            <p>Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre alterações significativas por meio do App ou por e-mail. O uso continuado do App após as alterações constitui aceitação da política atualizada.</p>
+
+            <h2>10. Entre em Contato</h2>
+            <div class="contact-box">
+                <p><strong>GemTech Labs AI</strong></p>
+                <p>E-mail: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
+                <p>Website: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            </div>
+        </div>
+
+        <!-- ═══ ESPAÑOL ═══ -->
+        <div id="lang-es" class="lang-content">
+            <h1>Política de Privacidad</h1>
+            <p class="last-updated">Última actualización: 15 de febrero de 2026</p>
+
+            <p>GemTech Labs AI ("nosotros" o "nuestro") opera la aplicación móvil FoodLens (la "App"). Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos su información cuando usa nuestra App.</p>
+
+            <h2>1. Información que Recopilamos</h2>
+            <p><strong>Información de la Cuenta:</strong> Al crear una cuenta, recopilamos su dirección de correo electrónico, nombre de usuario y credenciales de autenticación. Si inicia sesión con Apple o Google, recibimos información básica de perfil de esos servicios.</p>
+            <p><strong>Datos de Uso:</strong> Recopilamos información sobre cómo usa la App, incluyendo productos que escanea, consultas de búsqueda e interacciones con funciones. Esto nos ayuda a mejorar la experiencia de la App.</p>
+            <p><strong>Acceso a la Cámara:</strong> La App usa la cámara de su dispositivo exclusivamente para escanear códigos de barras de productos. No capturamos, almacenamos ni transmitimos fotos o videos. Los datos de la cámara se procesan localmente en su dispositivo.</p>
+            <p><strong>Información del Dispositivo:</strong> Podemos recopilar información general del dispositivo, como tipo de dispositivo, versión del sistema operativo y preferencias de idioma para optimizar la experiencia de la App.</p>
+
+            <h2>2. Cómo Usamos Su Información</h2>
+            <p>Usamos la información recopilada para:</p>
+            <ul>
+                <li>Proporcionar y mantener la funcionalidad principal de la App, incluyendo análisis de productos y puntuación de salud</li>
+                <li>Almacenar su historial de escaneo y favoritos para su comodidad</li>
+                <li>Mejorar y optimizar el rendimiento y la experiencia de usuario de la App</li>
+                <li>Gestionar su cuenta y suscripción</li>
+                <li>Comunicarnos con usted sobre actualizaciones, soporte o cambios en nuestros servicios</li>
+            </ul>
+
+            <h2>3. Almacenamiento y Seguridad de Datos</h2>
+            <p>Sus datos se almacenan de forma segura utilizando Google Firebase, que proporciona cifrado estándar de la industria para datos en tránsito y en reposo. Implementamos medidas técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración o destrucción.</p>
+
+            <h2>4. Servicios de Terceros</h2>
+            <p>Utilizamos los siguientes servicios de terceros:</p>
+            <ul>
+                <li><strong>Firebase (Google):</strong> Autenticación, almacenamiento de datos y funciones en la nube</li>
+                <li><strong>Open Food Facts:</strong> Base de datos de productos para información nutricional (código abierto, mantenida por la comunidad)</li>
+                <li><strong>Anthropic:</strong> Análisis de productos con IA para funciones premium</li>
+                <li><strong>RevenueCat:</strong> Gestión de suscripciones y pagos</li>
+            </ul>
+            <p>Estos servicios tienen sus propias políticas de privacidad que rigen el uso de su información.</p>
+
+            <h2>5. Compartición de Datos</h2>
+            <p>No vendemos, intercambiamos ni alquilamos su información personal a terceros. Podemos compartir datos anónimos y agregados con fines analíticos. Podemos divulgar su información si lo exige la ley o para proteger nuestros derechos legales.</p>
+
+            <h2>6. Retención de Datos</h2>
+            <p>Retenemos sus datos mientras su cuenta esté activa. Puede solicitar la eliminación de su cuenta y datos asociados en cualquier momento contactándonos. Tras la eliminación de la cuenta, sus datos personales se eliminarán permanentemente en un plazo de 30 días.</p>
+
+            <h2>7. Sus Derechos</h2>
+            <p>Dependiendo de su ubicación, puede tener derecho a:</p>
+            <ul>
+                <li>Acceder, corregir o eliminar sus datos personales</li>
+                <li>Oponerse o restringir el procesamiento de sus datos</li>
+                <li>Portabilidad de datos — recibir sus datos en formato estructurado</li>
+                <li>Retirar el consentimiento en cualquier momento</li>
+            </ul>
+            <p>Para ejercer cualquiera de estos derechos, contáctenos al correo electrónico que aparece abajo.</p>
+
+            <h2>8. Privacidad de Menores</h2>
+            <p>La App no está destinada a menores de 13 años. No recopilamos intencionalmente información personal de menores. Si cree que un menor nos ha proporcionado información personal, contáctenos para que podamos eliminarla.</p>
+
+            <h2>9. Cambios en esta Política</h2>
+            <p>Podemos actualizar esta Política de Privacidad periódicamente. Le notificaremos sobre cambios significativos a través de la App o por correo electrónico. El uso continuado de la App después de los cambios constituye la aceptación de la política actualizada.</p>
+
+            <h2>10. Contáctenos</h2>
+            <div class="contact-box">
+                <p><strong>GemTech Labs AI</strong></p>
+                <p>Correo: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
+                <p>Web: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.querySelector('[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+            localStorage.setItem('foodlens-lang', lang);
+        }
+        // Auto-detect language from browser
+        (function() {
+            var saved = localStorage.getItem('foodlens-lang');
+            if (saved) { switchLang(saved); return; }
+            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            if (browserLang.startsWith('pt')) switchLang('pt');
+            else if (browserLang.startsWith('es')) switchLang('es');
+            else switchLang('en');
+        })();
+    </script>
 </body>
 </html>
