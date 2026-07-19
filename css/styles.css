@@ -10,9 +10,9 @@
     --amber: #f5a623;            /* Jornada decorative accent */
     --amber-text: #b25400;       /* accessible amber for text on light bg (4.8:1) */
     --amber-glow: rgba(245, 166, 35, 0.16);
-    --oxblood: #7c3a3a;          /* Folio decorative accent */
-    --oxblood-text: #7c3a3a;     /* accessible oxblood for text on light bg (6.9:1) */
-    --oxblood-glow: rgba(124, 58, 58, 0.13);
+    --oxblood: #9b4a47;          /* Folio decorative accent — matches devdemello.com card tint */
+    --oxblood-text: #9b4a47;     /* accessible oxblood for text on light bg (5.5:1) */
+    --oxblood-glow: rgba(155, 74, 71, 0.13);
 
     /* Neutrals */
     --bg: #fafafa;
@@ -27,7 +27,15 @@
     /* Banners */
     --banner-foodlens: linear-gradient(165deg, #eef9f1 0%, #e2f4e8 100%);
     --banner-jornada: linear-gradient(165deg, #fdf6eb 0%, #faeeda 100%);
-    --banner-folio: linear-gradient(165deg, #fbf4e4 0%, #f1e4cf 100%);
+    /* Folio mirrors the app-icon backdrop on devdemello.com: a soft radial wash
+       of the brand tint over the neutral surface. --surface resolves per theme,
+       so this single definition covers light and dark. */
+    --banner-folio:
+        radial-gradient(115% 90% at 50% 32%,
+            color-mix(in srgb, var(--oxblood) 24%, transparent) 0%,
+            color-mix(in srgb, var(--oxblood) 9%, transparent) 52%,
+            transparent 100%),
+        var(--surface);
 
     /* Motion */
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -51,7 +59,7 @@
 
         --banner-foodlens: linear-gradient(165deg, #112a19 0%, #0d1f13 100%);
         --banner-jornada: linear-gradient(165deg, #221a0e 0%, #1d150a 100%);
-        --banner-folio: linear-gradient(165deg, #2a211a 0%, #1e1813 100%);
+        /* --banner-folio needs no dark override — it is built on var(--surface). */
     }
 }
 
@@ -458,7 +466,7 @@ nav.scrolled {
 
 #foodlens:hover { border-color: rgba(52, 199, 89, 0.35); }
 #jornada:hover { border-color: rgba(245, 166, 35, 0.4); }
-#folio:hover { border-color: rgba(124, 58, 58, 0.4); }
+#folio:hover { border-color: rgba(155, 74, 71, 0.4); }
 
 .app-banner {
     position: relative;
@@ -486,9 +494,8 @@ nav.scrolled {
     background: radial-gradient(ellipse 60% 90% at 50% -20%, var(--amber-glow), transparent);
 }
 
-.app-banner.folio::before {
-    background: radial-gradient(ellipse 60% 90% at 50% -20%, var(--oxblood-glow), transparent);
-}
+/* Folio deliberately has no ::before wash — the radial tint is already baked
+   into --banner-folio, matching the devdemello.com treatment. */
 
 .app-banner > * { position: relative; }
 
@@ -503,7 +510,7 @@ nav.scrolled {
 
 .app-banner.foodlens .app-icon { box-shadow: 0 14px 36px rgba(52, 199, 89, 0.28); }
 .app-banner.jornada .app-icon { box-shadow: 0 14px 36px rgba(196, 94, 0, 0.26); }
-.app-banner.folio .app-icon { box-shadow: 0 14px 36px rgba(124, 58, 58, 0.26); }
+.app-banner.folio .app-icon { box-shadow: 0 14px 36px rgba(155, 74, 71, 0.26); }
 
 .app-icon img {
     width: 100%;
@@ -563,7 +570,7 @@ nav.scrolled {
 
 .foodlens-card .feature-item:hover { border-color: rgba(52, 199, 89, 0.3); }
 .jornada-card .feature-item:hover { border-color: rgba(245, 166, 35, 0.35); }
-.folio-card .feature-item:hover { border-color: rgba(124, 58, 58, 0.35); }
+.folio-card .feature-item:hover { border-color: rgba(155, 74, 71, 0.35); }
 
 .feature-icon {
     flex-shrink: 0;

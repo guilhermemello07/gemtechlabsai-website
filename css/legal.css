@@ -32,7 +32,7 @@
 /* Per-app accent (set on <body>) */
 body.accent-green { --accent-text: #15803d; --accent: #34c759; }
 body.accent-amber { --accent-text: #b25400; --accent: #f5a623; }
-body.accent-oxblood { --accent-text: #7c3a3a; --accent: #7c3a3a; }
+body.accent-oxblood { --accent-text: #9b4a47; --accent: #9b4a47; }
 
 @media (prefers-color-scheme: dark) {
     body.accent-green { --accent-text: #34c759; }
