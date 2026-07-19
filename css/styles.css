@@ -27,14 +27,15 @@
     /* Banners */
     --banner-foodlens: linear-gradient(165deg, #eef9f1 0%, #e2f4e8 100%);
     --banner-jornada: linear-gradient(165deg, #fdf6eb 0%, #faeeda 100%);
-    /* Folio mirrors the app-icon backdrop on devdemello.com: a soft radial wash
-       of the brand tint over the neutral surface. --surface resolves per theme,
-       so this single definition covers light and dark. */
+    /* Folio's banner is a wash of the brand oxblood, densest behind the icon.
+       devdemello.com uses the same radial shape but fades to transparent at the
+       outer stop, which reads as bare grey in light mode; here the tint carries
+       all the way to the edge so the card stays recognisably oxblood. */
     --banner-folio:
         radial-gradient(115% 90% at 50% 32%,
-            color-mix(in srgb, var(--oxblood) 24%, transparent) 0%,
-            color-mix(in srgb, var(--oxblood) 9%, transparent) 52%,
-            transparent 100%),
+            color-mix(in srgb, var(--oxblood) 38%, transparent) 0%,
+            color-mix(in srgb, var(--oxblood) 24%, transparent) 55%,
+            color-mix(in srgb, var(--oxblood) 15%, transparent) 100%),
         var(--surface);
 
     /* Motion */
