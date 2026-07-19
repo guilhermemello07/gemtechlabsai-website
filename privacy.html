@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Privacy Policy — GemTech Labs AI</title>
-    <meta name="description" content="Privacy policies for GemTech Labs AI apps. Select FoodLens or Jornada to view its privacy policy.">
+    <meta name="description" content="Privacy policies for GemTech Labs AI apps. Select FoodLens, Jornada, or Folio to view its privacy policy.">
     <link rel="canonical" href="https://gemtechlabsai.com/privacy">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
@@ -18,6 +18,7 @@
         :root {
             --green: #34c759;
             --orange: #f5a623;
+            --oxblood: #7c3a3a;
             --bg: #fafafa;
             --bg-card: #ffffff;
             --text: #1a1a1a;
@@ -102,6 +103,7 @@
         }
         .app-card.foodlens:hover { border-color: var(--green); }
         .app-card.jornada:hover { border-color: var(--orange); }
+        .app-card.folio:hover { border-color: var(--oxblood); }
         .app-icon {
             width: 56px;
             height: 56px;
@@ -116,6 +118,7 @@
         }
         .app-icon.foodlens { box-shadow: 0 4px 16px rgba(52,199,89,0.2); }
         .app-icon.jornada { box-shadow: 0 4px 16px rgba(196,94,0,0.2); }
+        .app-icon.folio { box-shadow: 0 4px 16px rgba(124,58,58,0.2); }
         .app-info {
             text-align: left;
             flex: 1;
@@ -170,6 +173,17 @@
                 <div class="app-info">
                     <h2>Jornada</h2>
                     <p>AI-powered travel planning</p>
+                </div>
+                <span class="arrow">&rsaquo;</span>
+            </a>
+
+            <a href="/folio/privacy" class="app-card folio">
+                <div class="app-icon folio">
+                    <img src="/images/folio-icon-160.png" alt="" width="56" height="56">
+                </div>
+                <div class="app-info">
+                    <h2>Folio</h2>
+                    <p>Private reading tracker</p>
                 </div>
                 <span class="arrow">&rsaquo;</span>
             </a>
