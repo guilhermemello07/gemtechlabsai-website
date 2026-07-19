@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Privacy Policy — Folio</title>
-    <meta name="description" content="Privacy policy for the Folio iOS reading tracker by GemTech Labs AI: no account, no analytics, no data collection — your reading data stays on your device and in your private iCloud.">
+    <meta name="description" content="Privacy policy for the Folio iOS reading tracker by GemTech Labs AI: no account, no analytics, no data collection — your reading data stays on your device and in your private iCloud. Available in English and Portuguese.">
     <link rel="canonical" href="https://gemtechlabsai.com/folio/privacy">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
@@ -20,106 +20,217 @@
     <div class="container">
         <div class="top-bar">
             <a href="/" class="back-link">&larr; GemTech Labs AI</a>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="pt">PT</button>
+            </div>
         </div>
 
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: July 19, 2026</p>
+        <!-- ═══ ENGLISH ═══ -->
+        <div id="lang-en" class="lang-content active">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last updated: July 19, 2026</p>
 
-        <p>Guilherme Teixeira de Mello, trading as GemTech Labs AI ("we," "us," or "our"), operates the Folio mobile application ("App"). This Privacy Policy explains how your information is handled when you use the App.</p>
+            <p>Guilherme Teixeira de Mello, trading as GemTech Labs AI ("we," "us," or "our"), operates the Folio mobile application ("App"). This Privacy Policy explains how your information is handled when you use the App.</p>
 
-        <div class="important-box">
-            <p><strong>In short:</strong> Folio has no accounts, no servers, and no analytics. It does not connect to the internet to send us anything. Everything you record — your books, your reading sessions, your cover images — stays on your device, and syncs only through your own private iCloud account, which we cannot access. <strong>We collect no personal data whatsoever.</strong></p>
+            <div class="important-box">
+                <p><strong>In short:</strong> Folio has no accounts, no servers, and no analytics. It does not connect to the internet to send us anything. Everything you record — your books, your reading sessions, your cover images — stays on your device, and syncs only through your own private iCloud account, which we cannot access. <strong>We collect no personal data whatsoever.</strong></p>
+            </div>
+
+            <h2>1. Information We Collect</h2>
+            <p><strong>We collect nothing.</strong> Folio contains no analytics SDK, no crash-reporting SDK, no advertising SDK, and no third-party software development kits of any kind. The App makes no network requests to us or to any third party. There is no sign-up, no login, and no user account, so we never receive your name, email address, or any identifier.</p>
+
+            <h2>2. Information Stored on Your Device</h2>
+            <p>Folio stores the following on your device so the App can work. This information is yours; it is never transmitted to us.</p>
+
+            <h3>2.1 Your Library</h3>
+            <ul>
+                <li>Book details you enter: title, author, page count, and optionally an ISBN</li>
+                <li>Your reading progress: the page you have reached and the book's status (reading, finished, or abandoned)</li>
+                <li>The date you added a book and the date you finished it</li>
+                <li>A cover image, if you choose one from your photo library</li>
+            </ul>
+
+            <h3>2.2 Reading Sessions</h3>
+            <ul>
+                <li>When each session started and ended, and how long it lasted</li>
+                <li>How many pages you read in the session</li>
+                <li>Whether the session was timed live or entered manually afterwards</li>
+            </ul>
+
+            <h3>2.3 App Preferences</h3>
+            <p>Folio uses your device's standard app-preferences storage to remember your daily reminder setting and time, your idle-session timeout, and — so a live session survives the App being closed — the identifier and timestamps of a reading session in progress. No personal information is stored here.</p>
+
+            <h3>2.4 What Folio Does Not Access</h3>
+            <ul>
+                <li>We do <strong>not</strong> use analytics or tracking of any kind</li>
+                <li>We do <strong>not</strong> collect device advertising identifiers</li>
+                <li>We do <strong>not</strong> track your activity across other apps or websites</li>
+                <li>We do <strong>not</strong> collect location, contacts, health, or biometric data</li>
+                <li>Folio does <strong>not</strong> use your camera</li>
+            </ul>
+
+            <h2>3. iCloud Sync</h2>
+            <p>So your shelf is available on all your Apple devices, Folio syncs your library and reading sessions to <strong>your private iCloud database</strong> (Apple CloudKit), using your own Apple Account.</p>
+            <ul>
+                <li>This data lives in your personal iCloud storage and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a></li>
+                <li>It is a <em>private</em> database — it is not shared with other users, and <strong>we have no access to it</strong></li>
+                <li>Sync is optional in practice: if you are not signed in to iCloud, or iCloud is unavailable, Folio stores everything locally and works exactly the same offline</li>
+            </ul>
+            <p>To keep sync current, iOS may deliver silent background notifications to the App. These come from Apple's iCloud service, not from us.</p>
+
+            <h2>4. Device Permissions</h2>
+
+            <h3>4.1 Photo Library</h3>
+            <p>Folio asks for photo access only when you choose to set a book's cover image. The image you pick is stored inside the App's own data. Folio also asks for permission to <em>add</em> to your photo library if you choose to save a reading share image — this is add-only access and does not let the App read your photos.</p>
+
+            <h3>4.2 Notifications</h3>
+            <p>If you enable the daily reading reminder, Folio schedules a <strong>local</strong> notification on your device. Nothing is sent through a push server, and no notification content leaves your device.</p>
+
+            <h2>5. Sharing Your Reading</h2>
+            <p>Folio can generate an image summarising a book or a reading session. The image is created entirely on your device. Folio never posts or uploads it anywhere. If you choose to copy it, save it, or pass it to another app through the iOS share sheet, that onward sharing is your action, and the receiving app's own privacy policy then applies.</p>
+
+            <h2>6. Third Parties</h2>
+            <p>Folio integrates <strong>no third-party services</strong>. There are no advertisers, no data brokers, no analytics providers, and no cloud backend of ours. The only company involved at all is Apple, in its role as the provider of iCloud and the App Store. <strong>We do not sell, rent, or trade your information, because we never receive it.</strong></p>
+
+            <h2>7. Data Retention and Deletion</h2>
+            <p>Because we hold no data about you, there is nothing on our side to retain or delete. You are in full control:</p>
+            <ul>
+                <li>Delete an individual book or reading session at any time from within the App</li>
+                <li>Deleting the App from your device removes its local data</li>
+                <li>Data synced to iCloud is managed through your Apple Account — you can review and remove it in <strong>Settings &rsaquo; [your name] &rsaquo; iCloud &rsaquo; Manage Account Storage</strong></li>
+            </ul>
+
+            <h2>8. Data Security</h2>
+            <p>Your Folio data is protected by iOS's built-in file encryption and the security of your device passcode, Face ID, or Touch ID. Data synced to iCloud is encrypted in transit and at rest by Apple. Since Folio transmits nothing to us and holds no credentials or API keys, there is no server of ours that could be breached to expose your reading data.</p>
+
+            <h2>9. Children's Privacy</h2>
+            <p>Folio is not directed at children under the age of 13. Because the App collects no personal information from anyone, it collects none from children either.</p>
+
+            <h2>10. Your Rights</h2>
+            <p>Privacy laws such as the GDPR (European Economic Area) and the CCPA (California) give you rights of access, correction, deletion, objection, and portability over personal data a company holds about you.</p>
+            <p><strong>We hold no personal data about you</strong>, so there is nothing for us to disclose, correct, or erase. All of your Folio data is already in your own hands, on your device and in your own iCloud account. <strong>We do not sell personal information.</strong> If you have questions about how this applies to you, contact us using the details in Section 13.</p>
+
+            <h2>11. Purchases</h2>
+            <p>Folio is a paid app. Your purchase is processed entirely by Apple through the App Store. We never see or store your payment card details, and we receive no personal information from Apple about individual purchasers. Folio contains no subscriptions and no in-app purchases.</p>
+
+            <h2>12. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time — for example, if a future version of Folio adds a feature that changes how data is handled. We will notify you of material changes by updating the "Last updated" date at the top of this policy. Your continued use of the App after changes are posted constitutes your acceptance of the revised policy.</p>
+
+            <h2>13. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <div class="contact-box">
+                <p><strong>GemTech Labs AI</strong></p>
+                <p>Email: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
+                <p>Website: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            </div>
+
+            <p class="doc-footnote">This privacy policy applies to the Folio iOS application published by Guilherme Teixeira de Mello, trading as GemTech Labs AI.</p>
         </div>
 
-        <h2>1. Information We Collect</h2>
-        <p><strong>We collect nothing.</strong> Folio contains no analytics SDK, no crash-reporting SDK, no advertising SDK, and no third-party software development kits of any kind. The App makes no network requests to us or to any third party. There is no sign-up, no login, and no user account, so we never receive your name, email address, or any identifier.</p>
+        <!-- ═══ PORTUGUÊS ═══ -->
+        <div id="lang-pt" class="lang-content">
+            <h1>Política de Privacidade</h1>
+            <p class="last-updated">Última atualização: 19 de julho de 2026</p>
 
-        <h2>2. Information Stored on Your Device</h2>
-        <p>Folio stores the following on your device so the App can work. This information is yours; it is never transmitted to us.</p>
+            <p>Guilherme Teixeira de Mello, operando sob o nome comercial GemTech Labs AI ("nós" ou "nosso"), opera o aplicativo móvel Folio (o "App"). Esta Política de Privacidade explica como suas informações são tratadas quando você usa o App.</p>
 
-        <h3>2.1 Your Library</h3>
-        <ul>
-            <li>Book details you enter: title, author, page count, and optionally an ISBN</li>
-            <li>Your reading progress: the page you have reached and the book's status (reading, finished, or abandoned)</li>
-            <li>The date you added a book and the date you finished it</li>
-            <li>A cover image, if you choose one from your photo library</li>
-        </ul>
+            <div class="important-box">
+                <p><strong>Em resumo:</strong> o Folio não tem contas, não tem servidores e não tem análises de uso. Ele não se conecta à internet para nos enviar nada. Tudo o que você registra — seus livros, suas sessões de leitura, suas imagens de capa — permanece no seu dispositivo e sincroniza apenas através da sua própria conta privada do iCloud, à qual não temos acesso. <strong>Não coletamos absolutamente nenhum dado pessoal.</strong></p>
+            </div>
 
-        <h3>2.2 Reading Sessions</h3>
-        <ul>
-            <li>When each session started and ended, and how long it lasted</li>
-            <li>How many pages you read in the session</li>
-            <li>Whether the session was timed live or entered manually afterwards</li>
-        </ul>
+            <h2>1. Informações que Coletamos</h2>
+            <p><strong>Não coletamos nada.</strong> O Folio não contém SDK de análise, SDK de relatório de falhas, SDK de publicidade nem kits de desenvolvimento de terceiros de qualquer espécie. O App não faz requisições de rede para nós nem para terceiros. Não há cadastro, não há login e não há conta de usuário, portanto nunca recebemos seu nome, endereço de e-mail ou qualquer identificador.</p>
 
-        <h3>2.3 App Preferences</h3>
-        <p>Folio uses your device's standard app-preferences storage to remember your daily reminder setting and time, your idle-session timeout, and — so a live session survives the App being closed — the identifier and timestamps of a reading session in progress. No personal information is stored here.</p>
+            <h2>2. Informações Armazenadas no Seu Dispositivo</h2>
+            <p>O Folio armazena o seguinte no seu dispositivo para que o App possa funcionar. Estas informações são suas; elas nunca são transmitidas para nós.</p>
 
-        <h3>2.4 What Folio Does Not Access</h3>
-        <ul>
-            <li>We do <strong>not</strong> use analytics or tracking of any kind</li>
-            <li>We do <strong>not</strong> collect device advertising identifiers</li>
-            <li>We do <strong>not</strong> track your activity across other apps or websites</li>
-            <li>We do <strong>not</strong> collect location, contacts, health, or biometric data</li>
-            <li>Folio does <strong>not</strong> use your camera</li>
-        </ul>
+            <h3>2.1 Sua Biblioteca</h3>
+            <ul>
+                <li>Detalhes dos livros que você insere: título, autor, número de páginas e, opcionalmente, um ISBN</li>
+                <li>Seu progresso de leitura: a página em que você está e a situação do livro (lendo, concluído ou abandonado)</li>
+                <li>A data em que você adicionou um livro e a data em que o concluiu</li>
+                <li>Uma imagem de capa, caso você escolha uma da sua biblioteca de fotos</li>
+            </ul>
 
-        <h2>3. iCloud Sync</h2>
-        <p>So your shelf is available on all your Apple devices, Folio syncs your library and reading sessions to <strong>your private iCloud database</strong> (Apple CloudKit), using your own Apple Account.</p>
-        <ul>
-            <li>This data lives in your personal iCloud storage and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a></li>
-            <li>It is a <em>private</em> database — it is not shared with other users, and <strong>we have no access to it</strong></li>
-            <li>Sync is optional in practice: if you are not signed in to iCloud, or iCloud is unavailable, Folio stores everything locally and works exactly the same offline</li>
-        </ul>
-        <p>To keep sync current, iOS may deliver silent background notifications to the App. These come from Apple's iCloud service, not from us.</p>
+            <h3>2.2 Sessões de Leitura</h3>
+            <ul>
+                <li>Quando cada sessão começou e terminou, e quanto tempo durou</li>
+                <li>Quantas páginas você leu na sessão</li>
+                <li>Se a sessão foi cronometrada ao vivo ou inserida manualmente depois</li>
+            </ul>
 
-        <h2>4. Device Permissions</h2>
+            <h3>2.3 Preferências do App</h3>
+            <p>O Folio usa o armazenamento padrão de preferências de aplicativos do seu dispositivo para lembrar a configuração e o horário do seu lembrete diário, o tempo limite de sessão inativa e — para que uma sessão ao vivo sobreviva ao fechamento do App — o identificador e os horários de uma sessão de leitura em andamento. Nenhuma informação pessoal é armazenada aqui.</p>
 
-        <h3>4.1 Photo Library</h3>
-        <p>Folio asks for photo access only when you choose to set a book's cover image. The image you pick is stored inside the App's own data. Folio also asks for permission to <em>add</em> to your photo library if you choose to save a reading share image — this is add-only access and does not let the App read your photos.</p>
+            <h3>2.4 O que o Folio Não Acessa</h3>
+            <ul>
+                <li><strong>Não</strong> usamos análises de uso ou rastreamento de qualquer tipo</li>
+                <li><strong>Não</strong> coletamos identificadores de publicidade do dispositivo</li>
+                <li><strong>Não</strong> rastreamos sua atividade em outros aplicativos ou sites</li>
+                <li><strong>Não</strong> coletamos dados de localização, contatos, saúde ou biométricos</li>
+                <li>O Folio <strong>não</strong> usa sua câmera</li>
+            </ul>
 
-        <h3>4.2 Notifications</h3>
-        <p>If you enable the daily reading reminder, Folio schedules a <strong>local</strong> notification on your device. Nothing is sent through a push server, and no notification content leaves your device.</p>
+            <h2>3. Sincronização com o iCloud</h2>
+            <p>Para que sua estante esteja disponível em todos os seus dispositivos Apple, o Folio sincroniza sua biblioteca e suas sessões de leitura com o <strong>seu banco de dados privado do iCloud</strong> (Apple CloudKit), usando sua própria Conta Apple.</p>
+            <ul>
+                <li>Esses dados ficam no seu armazenamento pessoal do iCloud e são regidos pela <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Política de Privacidade da Apple</a></li>
+                <li>É um banco de dados <em>privado</em> — não é compartilhado com outros usuários e <strong>não temos acesso a ele</strong></li>
+                <li>Na prática, a sincronização é opcional: se você não estiver conectado ao iCloud, ou se o iCloud estiver indisponível, o Folio armazena tudo localmente e funciona exatamente da mesma forma offline</li>
+            </ul>
+            <p>Para manter a sincronização em dia, o iOS pode entregar notificações silenciosas em segundo plano ao App. Elas vêm do serviço iCloud da Apple, não de nós.</p>
 
-        <h2>5. Sharing Your Reading</h2>
-        <p>Folio can generate an image summarising a book or a reading session. The image is created entirely on your device. Folio never posts or uploads it anywhere. If you choose to copy it, save it, or pass it to another app through the iOS share sheet, that onward sharing is your action, and the receiving app's own privacy policy then applies.</p>
+            <h2>4. Permissões do Dispositivo</h2>
 
-        <h2>6. Third Parties</h2>
-        <p>Folio integrates <strong>no third-party services</strong>. There are no advertisers, no data brokers, no analytics providers, and no cloud backend of ours. The only company involved at all is Apple, in its role as the provider of iCloud and the App Store. <strong>We do not sell, rent, or trade your information, because we never receive it.</strong></p>
+            <h3>4.1 Biblioteca de Fotos</h3>
+            <p>O Folio pede acesso às fotos apenas quando você escolhe definir a imagem de capa de um livro. A imagem que você escolhe é armazenada dentro dos dados do próprio App. O Folio também pede permissão para <em>adicionar</em> à sua biblioteca de fotos caso você queira salvar uma imagem de compartilhamento de leitura — esse é um acesso apenas de adição e não permite que o App leia suas fotos.</p>
 
-        <h2>7. Data Retention and Deletion</h2>
-        <p>Because we hold no data about you, there is nothing on our side to retain or delete. You are in full control:</p>
-        <ul>
-            <li>Delete an individual book or reading session at any time from within the App</li>
-            <li>Deleting the App from your device removes its local data</li>
-            <li>Data synced to iCloud is managed through your Apple Account — you can review and remove it in <strong>Settings &rsaquo; [your name] &rsaquo; iCloud &rsaquo; Manage Account Storage</strong></li>
-        </ul>
+            <h3>4.2 Notificações</h3>
+            <p>Se você ativar o lembrete diário de leitura, o Folio agenda uma notificação <strong>local</strong> no seu dispositivo. Nada é enviado através de um servidor de push, e nenhum conteúdo de notificação sai do seu dispositivo.</p>
 
-        <h2>8. Data Security</h2>
-        <p>Your Folio data is protected by iOS's built-in file encryption and the security of your device passcode, Face ID, or Touch ID. Data synced to iCloud is encrypted in transit and at rest by Apple. Since Folio transmits nothing to us and holds no credentials or API keys, there is no server of ours that could be breached to expose your reading data.</p>
+            <h2>5. Compartilhando Sua Leitura</h2>
+            <p>O Folio pode gerar uma imagem resumindo um livro ou uma sessão de leitura. A imagem é criada inteiramente no seu dispositivo. O Folio nunca a publica nem a envia para lugar algum. Se você optar por copiá-la, salvá-la ou enviá-la a outro aplicativo pela folha de compartilhamento do iOS, esse compartilhamento posterior é uma ação sua, e a política de privacidade do aplicativo que a recebe passa a valer.</p>
 
-        <h2>9. Children's Privacy</h2>
-        <p>Folio is not directed at children under the age of 13. Because the App collects no personal information from anyone, it collects none from children either.</p>
+            <h2>6. Terceiros</h2>
+            <p>O Folio <strong>não integra nenhum serviço de terceiros</strong>. Não há anunciantes, não há corretores de dados, não há provedores de análise e não há nenhum backend em nuvem nosso. A única empresa envolvida é a Apple, em seu papel de provedora do iCloud e da App Store. <strong>Não vendemos, alugamos nem negociamos suas informações, porque nunca as recebemos.</strong></p>
 
-        <h2>10. Your Rights</h2>
-        <p>Privacy laws such as the GDPR (European Economic Area) and the CCPA (California) give you rights of access, correction, deletion, objection, and portability over personal data a company holds about you.</p>
-        <p><strong>We hold no personal data about you</strong>, so there is nothing for us to disclose, correct, or erase. All of your Folio data is already in your own hands, on your device and in your own iCloud account. <strong>We do not sell personal information.</strong> If you have questions about how this applies to you, contact us using the details in Section 13.</p>
+            <h2>7. Retenção e Exclusão de Dados</h2>
+            <p>Como não guardamos nenhum dado sobre você, não há nada do nosso lado para reter ou excluir. Você tem controle total:</p>
+            <ul>
+                <li>Exclua um livro ou uma sessão de leitura individual a qualquer momento dentro do App</li>
+                <li>Excluir o App do seu dispositivo remove os dados locais dele</li>
+                <li>Os dados sincronizados com o iCloud são gerenciados através da sua Conta Apple — você pode revisá-los e removê-los em <strong>Ajustes &rsaquo; [seu nome] &rsaquo; iCloud &rsaquo; Gerenciar Armazenamento da Conta</strong></li>
+            </ul>
 
-        <h2>11. Purchases</h2>
-        <p>Folio is a paid app. Your purchase is processed entirely by Apple through the App Store. We never see or store your payment card details, and we receive no personal information from Apple about individual purchasers. Folio contains no subscriptions and no in-app purchases.</p>
+            <h2>8. Segurança dos Dados</h2>
+            <p>Seus dados do Folio são protegidos pela criptografia de arquivos integrada do iOS e pela segurança do código de acesso, Face ID ou Touch ID do seu dispositivo. Os dados sincronizados com o iCloud são criptografados em trânsito e em repouso pela Apple. Como o Folio não transmite nada para nós e não guarda credenciais nem chaves de API, não existe servidor nosso que possa ser invadido para expor seus dados de leitura.</p>
 
-        <h2>12. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time — for example, if a future version of Folio adds a feature that changes how data is handled. We will notify you of material changes by updating the "Last updated" date at the top of this policy. Your continued use of the App after changes are posted constitutes your acceptance of the revised policy.</p>
+            <h2>9. Privacidade de Crianças</h2>
+            <p>O Folio não é direcionado a crianças menores de 13 anos. Como o App não coleta informações pessoais de ninguém, também não coleta nenhuma de crianças.</p>
 
-        <h2>13. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-        <div class="contact-box">
-            <p><strong>GemTech Labs AI</strong></p>
-            <p>Email: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
-            <p>Website: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            <h2>10. Seus Direitos</h2>
+            <p>Leis de privacidade como a LGPD (Brasil), o GDPR (Espaço Econômico Europeu) e a CCPA (Califórnia) lhe dão direitos de acesso, correção, exclusão, oposição e portabilidade sobre os dados pessoais que uma empresa mantém sobre você.</p>
+            <p><strong>Não mantemos nenhum dado pessoal sobre você</strong>, portanto não há nada para divulgarmos, corrigirmos ou apagarmos. Todos os seus dados do Folio já estão nas suas próprias mãos, no seu dispositivo e na sua própria conta do iCloud. <strong>Não vendemos informações pessoais.</strong> Se você tiver dúvidas sobre como isso se aplica a você, entre em contato conosco pelos dados da Seção 13.</p>
+
+            <h2>11. Compras</h2>
+            <p>O Folio é um aplicativo pago. Sua compra é processada inteiramente pela Apple através da App Store. Nunca vemos nem armazenamos os dados do seu cartão de pagamento, e não recebemos da Apple nenhuma informação pessoal sobre compradores individuais. O Folio não contém assinaturas nem compras dentro do aplicativo.</p>
+
+            <h2>12. Alterações nesta Política de Privacidade</h2>
+            <p>Podemos atualizar esta Política de Privacidade de tempos em tempos — por exemplo, se uma versão futura do Folio adicionar um recurso que altere a forma como os dados são tratados. Notificaremos você sobre alterações relevantes atualizando a data de "Última atualização" no topo desta política. O uso continuado do App após a publicação das alterações constitui sua aceitação da política revisada.</p>
+
+            <h2>13. Fale Conosco</h2>
+            <p>Se você tiver qualquer dúvida sobre esta Política de Privacidade, entre em contato conosco:</p>
+            <div class="contact-box">
+                <p><strong>GemTech Labs AI</strong></p>
+                <p>E-mail: <a href="mailto:contact@gemtechlabsai.com">contact@gemtechlabsai.com</a></p>
+                <p>Website: <a href="https://gemtechlabsai.com">gemtechlabsai.com</a></p>
+            </div>
+
+            <p class="doc-footnote">Esta política de privacidade se aplica ao aplicativo Folio para iOS publicado por Guilherme Teixeira de Mello, operando sob o nome comercial GemTech Labs AI.</p>
         </div>
-
-        <p class="doc-footnote">This privacy policy applies to the Folio iOS application published by Guilherme Teixeira de Mello, trading as GemTech Labs AI.</p>
     </div>
+
+    <script src="/js/legal-lang.js"></script>
 </body>
 </html>

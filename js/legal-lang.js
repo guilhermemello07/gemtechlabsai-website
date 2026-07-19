@@ -1,4 +1,6 @@
-// Language switcher for trilingual legal pages (EN/PT/ES)
+// Language switcher for multilingual legal pages.
+// Only acts on languages the page actually provides; a saved or browser
+// language with no matching block leaves the page's default (EN) showing.
 (function () {
     var KEY = 'foodlens-lang';
 
